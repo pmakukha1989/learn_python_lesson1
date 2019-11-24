@@ -124,10 +124,18 @@ stock_items = [
 # 3. в словаре найти стоимость модели с максималным остатком
 # 4. снизить эту стоимость на 10%
 a=0
-stocks_list={} 
+stocks_list=[]
 for x in stock_items:
-  #print (x)
-  stocks_list.append(stock_items[a]['stock'])
-  print(stock_items[a]['stock'])
+  #print(stock_items[a]['stock'])
+  stocks_list.append( int(stock_items[a]['stock']) )
   a=a+1
-print (stocks_list)
+
+#print (stocks_list)
+#print ( max(stocks_list))
+max_stock =  max(stocks_list)
+a=0
+for x in stock_items:
+  if  int(stock_items[a]['stock']):
+    stock_items[a]['price'] = int(stock_items[a]['price']) * 0.9 
+  a=a+1
+print (stock_items)
