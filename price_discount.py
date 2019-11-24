@@ -30,9 +30,10 @@ max_stock =  max(stocks_list)
 
 a=0
 for x in stock_items:
-  if  int(stock_items[a]['stock']):
+  if  int(stock_items[a]['stock']) == max_stock:
+    print( 'Было ' + str (stock_items[a]))
     stock_items[a]['price'] = int(stock_items[a]['price']) * 0.9 
+    print( 'Стало ' +str (stock_items[a]))
   a=a+1
 
 
-print (stock_items)
